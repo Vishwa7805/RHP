@@ -1,6 +1,6 @@
 import java.util.*;
 
-class Worker implements Runnable{
+class Worker extends Thread{
 	public void run() {
 		display();
 	}
@@ -17,8 +17,7 @@ class Main {
 		
 		for(int i = 0; i < n; i++) {
 			Worker w = new Worker();
-			Thread t = new Thread(w);
-			t.start();
+			w.start();
 		}
 	}
 }
